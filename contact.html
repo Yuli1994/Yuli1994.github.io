@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, ">
+    <link rel="shortcut icon" type="image/x-icon" href="Images\Icons\favicon.ico">
+    <link rel="stylesheet" href="Styles\contact.css">
+
+    <!-- подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <!-- подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fce9a50d02.js" crossorigin="anonymous"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="Styles\swiper-bundle.min.css">
+
+
+</head>
+
+<body>
+
+    <!-- верхняя плашка нафигации -->
+    <header class="header">
+        <div class="container">
+
+            <nav>
+                <div class="navbar">
+                    <div class="container nav-container">
+                        <input class="checkbox" type="checkbox">
+                        <div class="hamburger-lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </div>
+                        <ul class="menu-items">
+                            <li><a href="index.html">Startseite</a></li>
+                            <li><a href="uberuns.html">Über uns</a></li>
+                            <li><a href="menu.html">Menü</a></li>
+                            <li><a href="contact.html">Reservierung</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header__inner">
+
+
+
+
+
+                <!-- класс вкладок нафигации -->
+                <ul class="nav">
+                    <!-- отдельный класс для возможности выравнивания по ширине -->
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="uberuns.html">Über uns</a></li>
+                    <li><a href="menu.html">Menü</a></li>
+                    <li><a href="contact.html">Reservierung</a></li>
+                </ul>
+
+                <!-- класс блока номера телефона -->
+                <div class="telefonnumer">
+                    <!-- отдельный класс для возможности выравнивания по ширине -->
+                    <img src="Images\Icons\phone.svg" alt="phone" class="phone__icone">
+                    <div class="phone">+49 (0) 123 43456534</div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- класс кнопки наверх -->
+        <div class="btn-up btn-up_hide"></div>
+
+        <div class="intro">
+
+            <!-- Контейнер выравнивает по ширине и по центру -->
+            <div class="container2">
+
+                <!-- content содержит содержимое формы -->
+                <div class="content">
+
+                    <!-- Левая колонка: адрес, телефоны, email. Можете добавить свое -->
+                    <div class="left-side">
+                        <div class="address details">
+
+                            <!-- Вместо классов: название шрифтовых иконок (fontawesome.com) -->
+                            <i class="fas fa-map-marker-alt"></i>
+
+                            <!-- topic - заголовок, text-one, text-two - текст -->
+                            <div class="topic">Adresse</div>
+                            <div class="text-one">Karlsruhe</div>
+                            <div class="text-two">Volfgang straße 35</div>
+                        </div>
+                        <div class="phone details">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="topic">Tel.</div>
+                            <div class="text-one">+49 176 83 578</div>
+                            <div class="text-two">+49 178 86 423</div>
+                        </div>
+                        <div class="email details">
+                            <i class="fas fa-envelope"></i>
+                            <div class="topic">Email</div>
+                            <div class="text-one">support@sushikoi.com</div>
+                            <div class="text-two">sushi.koi@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <!-- Правая колонка: сама форма -->
+                    <div class="right-side">
+
+                        <!-- Заголовок для формы -->
+                        <div class="topic-text">Kontaktiere Uns</div>
+                        <h5></h5>
+                        <!-- Какой-то дополнительный текст -->
+                        <p> <strong>Öffnungszeiten : Mo-Fr: 11:00 - 22:30 </strong>
+                           <br>
+                            Bei Fragen oder oder um einen Tisch für eine wichtige Veranstaltung zu reservieren -
+                            füllen Sie das untenstehende Formular aus
+                        </p>
+
+                        <!-- Форма обратной связи -->
+                        <form action="mail.php" method="post">
+
+                            <!-- Каждый input для выравнивания вкладываем в блок input-box -->
+                            <div class="input-box">
+                                <input type="text" name="vname" placeholder="Vorname:" maxlength="50" required>
+                            </div>
+                            <div class="input-box">
+                                <input type="email" name="email" placeholder="Email:" maxlength="50" required>
+                            </div>
+                            <div class="input-box">
+                                <input type="tel" name="phone" placeholder="Tel:" maxlength="20" required>
+                            </div>
+                            <div class="input-box message-box">
+                                <textarea name="message" placeholder="Nachricht:" cols="50" rows="12" maxlength="100" required></textarea>
+                            </div>
+                            <div class="button">
+                                <input type="submit" name="button" value="Senden">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map">
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2617.0629168975356!2d8.39955831567971!3d49.00938797930255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797064f6918fd57%3A0x86938a877c94e6c1!2sGALERIA%20Karstadt%20Karlsruhe!5e0!3m2!1sru!2sde!4v1674166106253!5m2!1sru!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </div>
+    </main>
+     
+      <footer>
+        <div class=unten>
+            <div class=social>
+
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com"><i class="fa-brands fa-square-twitter"></i></a>
+                <a href="https://www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+
+
+            </div>
+
+            <ul class=list>
+
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+
+
+            </ul>
+            <p class=copyright>&copy; <strong>2022.made with <span class="pinkchar">&hearts;</span> by Julia.Some right reserved. </strong>
+            </p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="Scripts\swiper-bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="Scripts\script.js"></script>
+
+    <!-- Подключение шрифтовых иконок, можно получить на fontawesome.com -->
+    <script src="https://kit.fontawesome.com/fce9a50d02.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

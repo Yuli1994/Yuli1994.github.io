@@ -1,0 +1,1067 @@
+body {
+    
+    margin: 0;
+   
+    font-size: 15px; /* размер шрифта на все странице*/
+    line-height: 1.6; /* межстрочный интервал*/
+	
+ 	
+	
+	background-color: #181818; /* цвет страницы */
+    
+}
+
+
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+
+    max-width: 1450px;
+    margin: 0 auto;
+	text-align: center;	
+}
+
+.header {
+    width: 100%;
+    padding-top: 20px; /*отступ плашки от верха страницы*/
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /*выносим на передний план*/
+}
+
+.header__inner {
+    align-items: center; /*выравнивание текста по горизонтали по центру*/
+    font-size: 24px;
+    display: flex;
+    /*пространство между словами*/
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 991px) {
+  
+ 
+    
+     .header__inner {
+         
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navigation*/
+
+
+.nav {
+    font-size: 24px;
+    display: flex;
+    /*пространство между словами*/
+    justify-content: space-between;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.nav > li {
+    white-space: nowrap;
+    display: inline-block; /*вывод в одну строку*/
+    vertical-align: top;
+    margin: 0 20px;
+    
+    position: relative; /*указываем его как родительский элемент для появлении линии под текстом*/
+    
+    /*изначальный текст плашки меню*/
+    color: #C9D6DF;
+    text-decoration: none;
+    
+    transition: color .2s linear;
+}
+
+/*появление линии под текстом*/
+.nav > li:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+   
+    background-color: #FF847C;
+    opacity: 0; /*отключение видимости полоски*/
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    
+    transition: opacity .2s linear; /*плавное появление полоски*/
+}
+
+.nav > li:hover {
+    /*текст при наведении мышкой*/
+    color: #FF847C;
+}
+
+.nav > li:hover:after {
+    /*полоса при наведении мышкой*/
+    opacity: 1;/*включение видимости полоски*/
+    
+}
+
+/*определение позиции номера телефона и картинки*/
+.telefonnumer {
+    font-size: 26px;
+    color: #C9D6DF; /*нужно будет изменить цвет картинки телефона на #C9D6DF*/
+    display: flex;
+    align-items: center;
+}
+
+/*расстояние между картинкой телефона и номера*/
+.phone {
+    margin: 0 10px;
+}
+
+
+
+
+
+
+/* Hamburger menu */
+
+
+.navbar {
+  width: 100%;
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    
+  display: none;
+
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+  border-radius: 50px;
+  border: 0;
+   
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #C9D6DF;
+  font-weight: 500;
+  font-size: 30px;
+  
+  font-family: 'Kaushan Script', cursive;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff; /*цвет линий бургера*/
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  background-color: #512da8;
+  height: 480px;
+  width: 260px;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+  
+    
+    .navbar {
+     display: contents;
+
+}
+    
+}
+
+
+
+
+
+/* Logo und name */
+.intro {
+	  /*размеры начльного экрана*/
+    width: 100%;
+    height: 100vh;
+    
+    /*интро картинка*/
+    background: url(..//Images/Backgrounds/background_start_last_version.jpg) center no-repeat;
+    background-size: cover;
+}
+
+
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	
+	.intro {
+  
+    height: 60vh;
+    
+    /*интро картинка*/
+    background: url(..//Images/Backgrounds/background.0.jpg) center no-repeat;
+    background-size: cover;
+    
+}
+	
+
+}
+
+
+
+.intro__logo {
+    text-align: center;/*выравнивание логотипа по центру*/
+    padding-top: 70px;
+}
+
+.intro__name {
+    text-align: center; /*выравнивание названия по центру*/
+}
+
+/*lounge bar*/
+.intro__subtitle {
+    text-align: center;
+    font-size: 36px;
+    color: #C9D6DF;
+    font-family: 'Great Vibes', cursive;
+}
+
+/* mobile */
+@media (max-width: 991px) {
+	.sushi__koi {
+		width: 90%;/* Ширина области */
+		height: 90%;/* Высота области */
+	}
+}
+
+
+
+
+
+/* Angebot titel*/
+
+
+
+.sale {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.sale__title1 {
+    font-size: 56px;
+    font-family: 'Great Vibes', cursive;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+
+
+
+h4 {
+	animation: pulsate 2s infinite alternate;
+}
+
+@keyframes pulsate {
+
+	100% {
+		text-shadow:
+			0 0 1px #fff,
+			0 0 2px #fff,
+			0 0 3px #fff,
+			0 0 20px #E72C37,
+			0 0 40px #E72C37,
+			0 0 45px #E72C37,
+			0 0 50px #E72C37,
+			0 0 75px #E72C37;
+	}
+
+	0% {
+		text-shadow:
+			0 0 0px #fff,
+			0 0 1px #fff,
+			0 0 2px #fff,
+			0 0 5px #E72C37,
+			0 0 23px #E72C37,
+			0 0 27px #E72C37,
+			0 0 35px #E72C37,
+			0 0 40px #E72C37;
+	}
+}
+
+.sale__title2 {
+    font-family: 'Kaushan Script', cursive;
+    color: #FF847C;
+}
+
+/* mobile */
+@media (max-width: 991px) {
+	.sale__title2 {
+		font-size: 20px;
+		margin: 0 10px;
+	}
+}
+
+
+
+
+
+/* Slider */
+
+
+
+
+
+.slider {
+	 background-color: #181818; /* цвет страницы */
+}
+
+.slide-container {
+  max-width: 1250px;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 991px) {
+	.slide-content {
+		margin: 0 10px;
+	}
+}
+
+.card{
+  border-radius: 25px; /* background-color: ;*/
+}
+
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content {
+  position: relative;
+}
+
+.card-image {
+  position: relative;
+  height: 300px;
+  width: 350px;
+}
+
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10%;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #FF847C;
+  font-family: 'Handlee';
+  font-weight: 700;
+}
+
+.description {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+.button {
+  border: none;
+  font-size: 16px;
+  color: #C9D6DF;
+  padding: 8px 16px;
+  background-color: #512da8;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #673ab7;
+}
+
+.swiper-navBtn {
+  color: #512da8;
+  transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover {
+  color: #673ab7;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 35px;
+}
+
+.swiper-button-next{
+  right: 0;
+}
+
+.swiper-button-prev{
+  left: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: #512da8;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #673ab7;
+}
+
+@media screen and (max-width: 991px) {
+
+	.swiper-navBtn {
+		display: none;
+	}
+}
+
+
+
+/* iPhone 5, 5S, 5C, 5 SE (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	
+	.swiper-navBtn {
+		display: none;
+	}
+	
+	.slide-content {
+		margin: 0 10px;
+	}
+}
+ 
+
+/* iPhone 6, 6S, 7, 8, SE 2020 (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+	.swiper-navBtn {
+		display: none;
+	}
+	
+	.slide-content {
+		margin: 0 10px;
+	}
+}
+
+/* iPhone 6+, 7+, 8+ (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) { 
+	.swiper-navBtn {
+		display: none;
+	}
+	
+	.slide-content {
+		margin: 0 10px;
+	}
+}
+
+
+
+
+
+
+
+
+
+/* Delivery */
+
+
+
+
+
+.info__delivery {
+
+	margin-top: 7%;
+	color: #fff;
+	background-color: #000;
+}
+    
+.container__delivery {
+   
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+    padding: 6% 0;
+}
+
+.delivery_head {
+	
+    align-items: center; 
+}
+
+.delivery_title {
+    
+    font-size: 50px; /* размер шрифта на все странице*/
+    line-height: 1.7; /* межстрочный интервал*/
+    font-family: 'Handlee';
+    padding: 0 80px 0 80px;
+}
+
+.delivery_subtitle {
+    
+    font-size: 50px; /* размер шрифта на все странице*/
+    line-height: 1.7; /* межстрочный интервал*/
+    font-family: 'Handlee';
+    padding: 0 80px 0 80px; 
+}
+
+@media screen and (max-width: 991px) {
+
+	.delivery_title {
+		font-size: 35px;
+		
+    	padding: 0 40px 0 40px;
+
+		 
+		text-align: center;
+	}
+
+
+	
+	.delivery_subtitle {
+    
+    font-size: 22px;  
+	text-align: center;
+}
+	
+}
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	
+	.delivery_title {
+		font-size: 30px;
+		
+    	padding: 0 15px 0 15px;
+
+
+		text-align: center;
+	}
+}
+
+
+
+.delivery {
+    
+	padding: 40px 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 991px) {
+    
+   .delivery {
+   	flex-wrap: nowrap;
+   	flex-direction: column;
+
+   }
+}
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	
+	.delivery {
+   	padding: 15px 15px 0 15px;
+
+   }
+}
+
+.delivery__item {
+    
+    width: 400px;
+    padding-left: 40px;
+}
+
+.delivery__item p {
+    
+    font-size: 16px;
+}
+
+@media screen and (max-width: 991px) {
+
+	.delivery__item {
+
+		width: 100%;
+		padding: 0 15px;
+		margin: 40px 0 0;
+	}
+
+	.delivery__item p {
+
+		  
+		font-size: 18px;
+	}
+}
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	
+	.delivery__item {
+
+		width: 100%;
+		 
+		margin: 20px 0 0;
+	}
+
+	 
+}
+
+.prev {
+    
+    display: flex;
+    align-items: center; 
+    font-size: 20px;
+}
+
+@media screen and (max-width: 991px) {
+	
+	 
+
+.prev h5 {
+		font-size: 20px;
+	}
+}
+
+.image__info {
+    margin-right: 15px;
+    
+    width: 70px;
+    height: 70px;
+}
+
+.image__info1 {
+    margin-right: 15px;
+    
+    width: 70px;
+    height: 70px;
+	transform: rotate(-90deg);
+}
+
+
+
+@media screen and (max-width: 991px) {
+	
+	.image__info {
+		
+		margin-right: 10px;
+		width: 50px;
+		height: 50px;
+	}
+	
+	.image__info1 {
+ 		margin-left: 10px;
+		width: 50px;
+		height: 50px;
+        
+}
+}
+
+
+
+
+
+/* Uberuns */
+
+
+.uberuns {
+    color: #fff;
+    padding-top: 100px;
+    font-family: 'Handlee';
+	 background-color: #181818; /* цвет страницы */
+}
+
+.container__uberuns {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    
+}
+
+.title__uberuns {
+    font-size: 45px; /* размер шрифта на все странице*/
+    line-height: 1.6; /* межстрочный интервал*/
+    text-align: center;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+.item {
+    padding-bottom: 5%;
+}
+
+.info {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 991px) {
+
+	.info {
+		flex-flow: column;
+		text-indent: 30px;
+	}
+
+	.image__block {
+		order: 2; /* меняем текст и картинку местами */
+		width: 90%; /* отступы по бокам при выводе колонкой */
+	}
+
+	.text__block {
+		order: 1; /* меняем текст и картинку местами */
+		width: 90%; /* отступы по бокам при выводе колонкой */
+	}
+}
+
+figure {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    width: 45%;
+}
+
+figure img{
+    border-radius: 0.42em;
+    border: 0;
+}
+
+figure h2 {
+   font-size: 40px;
+    line-height: 1.1;
+}
+
+figure p {
+  line-height: 1.5;
+  font-size: 20px; 
+}
+
+
+
+
+
+/* foooter */
+
+footer {
+     
+    background-color: #000;
+    font-weight: 400;
+    
+}
+.unten {
+	font-family: 'Handlee';
+    padding: 40px 0;
+    background-color:#C9D6DF;
+    }
+
+.social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4b4c4d;
+     
+    
+}
+
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	 
+	.social {
+     
+    padding-bottom: 0px;
+    
+}
+}
+
+
+.social a {
+font-size: 50px;
+color:inherit;
+text-align:center;
+display: inline-block;
+margin: 0 8px;
+opacity: 0.75;
+    
+    
+}
+
+.social a:hover {
+    opacity: 0.9;
+}
+
+ ul {
+    margin-top: 0;
+    padding: 0; 
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+ul li a{
+    color:inherit;
+    text-decoration: none;
+    opacity: 0.8;
+    
+   }
+ul li a:hover {
+    opacity: 1;
+}
+
+ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #4b4c4d;
+    
+        
+     
+    
+}
+
+.pinkchar {
+    color:#673ab7;
+    
+    
+}
+	@media (max-width: 991px) {
+	.copyright {
+		font-size: 13px;
+	}
+
+	.social a {
+		font-size: 60px;
+		margin: 0 15px;
+	}
+
+	ul {
+		font-size: 30px;
+	}
+
+}
+
+
+
+
+
+
+
+/* кнопка наверх */
+
+.btn-up {
+  position: fixed; /* фиксированная позиция */
+  background-color: #512da8; /* цвет заднего фона */
+  right: 20px; /* расстояние от правого края */
+  bottom: 0px; /* расстояние от нижнего края */
+  border-top-left-radius: 5%; /* скругление верхнего левого угла */
+  border-top-right-radius: 5%; /* скругление верхнего правого угла */
+  cursor: pointer; /* форма курсора */
+  display: flex; /* не отображать элемент */
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  width: 60px;
+  height: 50px;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.btn-up::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.btn-up_hide {
+  display: none;
+}
+
+.btn-up_hiding {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-up:hover {
+    background-color: #673ab7; /* цвет заднего фона при наведении */
+  }
+}
+
+/* mobile */
+@media (max-width: 991px) {
+	.btn-up {
+		width: 70px;/* Ширина области */
+		height: 55px;/* Высота области */
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

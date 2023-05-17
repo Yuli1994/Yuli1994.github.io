@@ -1,0 +1,734 @@
+/* Подключение шрифта Roboto */
+@import url("https:/*fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+body {
+    
+    margin: 0;
+    background-color: black; /* цвет страницы */
+    font-size: 15px; /* размер шрифта на все странице*/
+    line-height: 1.6; /* межстрочный интервал*/
+    
+}
+.intro {
+    /*размеры начльного экрана*/
+    width: 100%;
+    height: 100vh;
+	  display: flex;
+    justify-content: center; /* чтобы контейнер */
+    align-items: center; 
+    
+    /*интро картинка*/
+    background: url(..//Images/Backgrounds/background_contact_last_version.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+ 
+.container {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+	
+}
+
+
+.navbar {
+  width: 100%;
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    
+  display: none;
+
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+  border-radius: 50px;
+  border: 0;
+    
+  
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #C9D6DF;
+  font-weight: 500;
+  font-size: 30px;
+  
+  font-family: 'Kaushan Script', cursive;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff; /*цвет линий бургера*/
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  background-color: #512da8;
+  height: 480px;
+  width: 260px;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+
+
+.header {
+    width: 100%;
+    padding-top: 20px; /*отступ плашки от верха страницы*/
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    align-items: center; /*выравнивание текста по горизонтали по центру*/
+    font-size: 24px;
+    display: flex;
+    /*пространство между словами*/
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 991px) {
+  
+ 
+    
+     .header__inner {
+         
+        display: none;
+    }
+    
+    .navbar {
+      
+    
+      display: contents;
+
+}
+    
+}
+
+
+
+/*изменение текста верхней плашки меню*/
+.nav {
+    font-size: 24px;
+    display: flex;
+    /*пространство между словами*/
+    justify-content: space-between;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.nav > li {
+    white-space: nowrap;
+    display: inline-block; /*вывод в одну строку*/
+    vertical-align: top;
+    margin: 0 20px;
+    
+    position: relative; /*указываем его как родительский элемент для появлении линии под текстом*/
+    
+    /*изначальный текст плашки меню*/
+    color: #C9D6DF;
+    text-decoration: none;
+    
+    transition: color .2s linear;
+}
+
+/*появление линии под текстом*/
+.nav > li:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+   
+    background-color: #FF847C;
+    opacity: 0; /*отключение видимости полоски*/
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    
+    transition: opacity .2s linear; /*плавное появление полоски*/
+}
+
+.nav > li:hover {
+    /*текст при наведении мышкой*/
+    color: #FF847C;
+}
+
+.nav > li:hover:after {
+    /*полоса при наведении мышкой*/
+    opacity: 1;/*включение видимости полоски*/
+    
+}
+
+/*определение позиции номера телефона и картинки*/
+.telefonnumer {
+    font-size: 26px;
+    color: #C9D6DF; /*нужно будет изменить цвет картинки телефона на #C9D6DF*/
+    display: flex;
+    align-items: center;
+}
+
+/*расстояние между картинкой телефона и номера*/
+.phone {
+    margin: 0 10px;
+}
+
+.container2 {
+    width: 100%;
+    max-width: 1000px;
+	
+   
+
+}
+
+.content {
+    
+  font-family: "Roboto", sans-serif;
+  display: flex; /* делаем колонки в ряд */
+  align-items: center; /* выравниваем по центру */
+  justify-content: space-between; /* колонки растянутся на всю ширину */
+  background: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  margin-top: 30px;
+}
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	.content {
+		padding: 40px;
+		margin-top: 30px;
+	}
+}
+/* iPhone 5, 5S, 5C, 5 SE (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.content {
+
+		margin-top: 300px;
+}
+}
+
+/* Стили левой колонки */
+.left-side {
+  width: 25%; /* занимает 25% общей ширины */
+  height: 100%; /* растягиваем на всю высоту */
+  position: relative; /* позиционирование относительное (для ::before) */
+  display: flex;
+  flex-direction: column; /* внутри элементы располагаем в колонку */
+    
+}
+
+/* Стили разделительной линии между левой и правой колонкой */
+.left-side::before {
+  content: ""; /* контент нам не нужен */
+  position: absolute; /* позиционируем относительно .left-side */
+  height: 70%; /* высота 70% от .left-side */
+  width: 2px; /* ширина 2px */
+  background: #afafb6;
+  right: -15px; /* позиционируем справа + отступ 15px (справа) */
+  top: 50%; /* выравниваем по центру */
+  transform: translateY(-50%); /* выравниваем по центру */
+}
+
+/* Стили правой колонки */
+.right-side {
+  width: 75%; /* занимает 75% общей ширины */
+  margin-left: 75px;
+}
+
+@media screen and (max-width: 991px) {
+    
+    .content{
+        flex-flow: column;
+    }
+    
+    .left-side {
+        order:2;
+        flex-flow: row;
+        width: 100%; 
+        justify-content: space-around;
+        white-space: nowrap; /* Запрещаем перенос слов */
+        flex-wrap: wrap;
+		text-align: center;
+    }
+    
+    .right-side {
+    
+        margin-bottom: 30px; 
+        order: 1; 
+        width: 100%; 
+        margin-left: 0;
+         
+        text-align: center;   
+    }
+    
+   
+    
+    .left-side::before {
+        display: none;
+        
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .container2 {
+   
+    padding: 0 5px;
+    margin-top: 50%;
+        
+}
+    
+    .input-box {
+        padding: 0;
+        margin: 0;
+    }
+  
+	.details {
+	
+  margin-bottom: 20px;
+		
+ 
+}
+	 
+
+}
+
+
+
+/* Элементы левой колонки: адрес, телефон, email */
+.details {
+	
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Общие стили для иконок */
+.details i {
+  font-size: 25px; /* задаем размер */
+  color: #3e2093; /* задаем цвет */
+  margin-bottom: 10px;
+}
+
+/* Стили для заголовков левой колонки */
+.topic {
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 7px; /* отступ снизу 7px */
+}
+
+/* Стили для текста левой колонки */
+.text-one,
+.text-two {
+  font-size: 14px;
+  color: #afafb6;
+}
+
+/* Заголовок правой колонки */
+.topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: #3e2093;
+  margin-bottom: 10px;
+}
+
+p {
+    color: black;
+}
+/* Текст правой колонки */
+.right-side p {
+  margin-bottom: 20px;
+}
+
+/* Контейнер для input'ов формы */
+.input-box {
+  height: 50px; /* по сути задаем высоту input'а */
+  width: 100%; /* ширина на всю ширину правой колонки (с учетом padding) */
+  margin-bottom: 20px; /* отступаем снизу 20px */
+}
+
+/* Стили для input и textarea (поле сообщение) */
+.input-box input,
+.input-box textarea {
+  height: 100%; /* растягиваем на всю высоту контейнера 50px */
+  width: 100%; /* растягиваем на всю ширину */
+  border: none; /* убираем внешние края */
+  border-radius: 5px; /* скругляем края */
+  background: #f0f1f8; /* задаем цвет фона */
+  padding: 0 20px; /* отступ справа и слева 20px */
+}
+
+/* Отдельно стилизуем поле сообщение */
+.input-box textarea {
+  resize: none; /* чтобы нельзя было менять высоту */
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Это контейнер для поля сообщение */
+.message-box {
+  min-height: 110px; /* минимальная высота 110px */
+}
+
+/* Стили для контейнера кнопки */
+.button {
+  display: inline-block; /* делаем блочно-строчный элемент */
+}
+
+/* Стили для самой кнопки */
+.button input[type="submit"] {
+  color: #fff;
+  font-size: 18px;
+  background: #ff8000;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  transition: 0.2s; /* чтобы плавно менялся цвет при наведении (:hover) */
+}
+
+/* Меняем цвет фона при наведении на кнопку */
+.button input[type="submit"]:hover {
+  background: #AA5500;
+}
+
+.map {
+	display: flex;
+    justify-content: center; /* чтобы контейнер */
+    align-items: center; 
+}
+
+@media screen and (max-width: 991px) {
+    
+	.map {
+		padding: 0 5px;
+		margin-top: 30%;
+	}
+
+}
+
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	
+	.map {
+	
+	 padding: 0 5px;
+    margin-top: 20%;
+}
+}
+
+/* iPhone 5, 5S, 5C, 5 SE (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+	.map {
+     margin-top: 85%;
+ }
+}
+
+
+iframe {
+	border-radius: 5px;
+	margin-top: 130px;
+	margin-bottom: 140px;
+	width: 100%;
+    max-width: 1000px;
+}
+
+@media screen and (max-width: 991px) {
+    
+	iframe {
+		margin-top: 130px;
+	margin-bottom: 130px;
+	}
+
+}
+
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	
+	iframe {
+	
+	margin-top: 130px;
+	margin-bottom: 70px;
+}
+}
+
+
+/* foooter */
+
+footer {
+     
+    background-color: #000;
+    font-weight: 400;
+    
+}
+.unten {
+	font-family: 'Handlee';
+    padding: 40px 0;
+    background-color:#C9D6DF;
+    }
+
+.social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4b4c4d;
+     
+    
+}
+
+
+/* iPhone 12, 12 Pro, 13, 13 Pro (портретный режим) */
+@media only screen and (orientation: portrait) and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3){
+	 
+	.social {
+     
+    padding-bottom: 0px;
+    
+}
+}
+
+
+.social a {
+font-size: 50px;
+color:inherit;
+text-align:center;
+display: inline-block;
+margin: 0 8px;
+opacity: 0.75;
+    
+    
+}
+
+.social a:hover {
+    opacity: 0.9;
+}
+
+ ul {
+    margin-top: 0;
+    padding: 0; 
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+ul li a{
+    color:inherit;
+    text-decoration: none;
+    opacity: 0.8;
+    
+   }
+ul li a:hover {
+    opacity: 1;
+}
+
+ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #4b4c4d;
+    
+        
+     
+    
+}
+
+.pinkchar {
+    color:#673ab7;
+    
+    
+}
+	@media (max-width: 991px) {
+	.copyright {
+		font-size: 13px;
+	}
+
+	.social a {
+		font-size: 60px;
+		margin: 0 15px;
+	}
+
+	ul {
+		font-size: 30px;
+	}
+
+}
+
+
+
+
+
+
+
+/* кнопка наверх */
+
+.btn-up {
+  position: fixed; /* фиксированная позиция */
+  background-color: #512da8; /* цвет заднего фона */
+  right: 20px; /* расстояние от правого края */
+  bottom: 0px; /* расстояние от нижнего края */
+  border-top-left-radius: 5%; /* скругление верхнего левого угла */
+  border-top-right-radius: 5%; /* скругление верхнего правого угла */
+  cursor: pointer; /* форма курсора */
+  display: flex; /* не отображать элемент */
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  width: 60px;
+  height: 50px;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.btn-up::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.btn-up_hide {
+  display: none;
+}
+
+.btn-up_hiding {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-up:hover {
+    background-color: #673ab7; /* цвет заднего фона при наведении */
+  }
+}
+
+/* mobile */
+@media (max-width: 991px) {
+	.btn-up {
+		width: 70px;/* Ширина области */
+		height: 55px;/* Высота области */
+	}
+}
